@@ -1,10 +1,12 @@
 package csci.unca.nmarin.othello;
 
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		Board playingBoard = new Board(Board.black);
+		System.out.println(playingBoard.toString());
 	}
 
 }
