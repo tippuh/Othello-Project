@@ -11,7 +11,9 @@ public class Board {
 	private static final int empty = 0;
 	public static Color  black;
 	public static Color white;
-	private int [][] gameBoard = new int[10][10];
+	private int HEIGHT = 10;
+	private int WIDTH = 10;
+	private int [][] gameBoard = new int[HEIGHT][WIDTH];
 
 	public Board(Color color) {
 		for (int i = 0; i < gameBoard.length; i++) {
@@ -56,6 +58,7 @@ public class Board {
 		String aString = "";
 		  for(int i = 0; i < gameBoard.length; i++) {
 			  aString += "\n";
+			  aString += "C";
 		     for(int j = 0; j < gameBoard[i].length; j++) {
 		        aString += " " + gameBoard[i][j];
 		     }
