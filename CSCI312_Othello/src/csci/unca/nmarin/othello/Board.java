@@ -2,20 +2,19 @@ package csci.unca.nmarin.othello;
 
 import java.awt.Color;
 import java.awt.List;
+import java.util.Scanner;
 
 public class Board {
 
-	private static final int me = 1;
-	private static final int opponent = -1;
-	private static final int border = -2;
-	private static final int empty = 0;
-	public static Color  black;
-	public static Color white;
+	public static final int me = 1;
+	public  static final int opponent = -1;
+	public static final int border = -2;
+	public static final int empty = 0;
 	private int HEIGHT = 10;
 	private int WIDTH = 10;
 	private int [][] gameBoard = new int[HEIGHT][WIDTH];
 
-	public Board(Color color) {
+	public Board( String color) {
 		for (int i = 0; i < gameBoard.length; i++) {
 			for(int j = 0; j < gameBoard[i].length; j++) {
 				if (i == 0 || i == gameBoard.length-1 || j == 0 || j == gameBoard.length-1) {
@@ -26,14 +25,14 @@ public class Board {
 			}
 		}
 		
-		if (color == black) {
+		if (color.charAt(0) == 'B') {
 			gameBoard[4][4] = opponent;
 			gameBoard[4][5] = me;
 			gameBoard[5][4] = me;
 			gameBoard[5][5] = opponent;
 		}
 		
-		if (color == white) {
+		else  {
 			gameBoard[4][4] = me;
 			gameBoard[4][5] = opponent;
 			gameBoard[5][4] = opponent;
@@ -41,15 +40,23 @@ public class Board {
 		}
 	}
 	
-	public static List generateMoves() {
+	public List generateMoves() {
 		return null;
 		
 	}
-	
-	public static void applyMove() {
-		
+	public Move getMyMove() {
+		return null;
 	}
 	
+	public Move getOpponentMove(Scanner scan) {
+		return null;
+	}
+	public void applyMove(int player, Move move) {
+		
+	}
+	public boolean gameOver() {
+		return true;
+	}
 	public static int evaluate() {
 		return 0;
 	}
@@ -57,11 +64,11 @@ public class Board {
 	public String toString() {
 		String aString = "";
 		  for(int i = 0; i < gameBoard.length; i++) {
-			  aString += "\n";
-			  aString += "C";
+			 aString += "C";
 		     for(int j = 0; j < gameBoard[i].length; j++) {
 		        aString += " " + gameBoard[i][j];
 		     }
+		     aString += "\n";
 		  }
 		  return aString;
 	}
